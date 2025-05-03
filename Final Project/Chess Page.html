@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chess Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-image 1s ease-in-out;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px 60px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 0;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/logo.jpg" alt="Site Logo" style="height: 50px; margin-right: 20px;">
+    <!-- First audio file -->
+    <audio controls autoplay>
+      <source src="audio/Chess-audio.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="DC Comics.html">DC Comics</a>
+      <a href="Marvel Page.html">Marvel</a>
+      <a href="Chess Page.html">Chess</a>
+      <a href="LOTR Page.html">LOTR</a>
+      <a href="Gallery.html">Gallery</a>
+
+    </nav>
+  </header>
+  <div class="overlay">
+    <h1>My Chess Hobby Page</h1>
+  </div>
+
+  <script>
+    const images = [
+      'img/BobbyFisher2008.jpg',
+      'img/Chess0284.jpg',
+      'img/Chess0185.jpg',
+      'img/Chess0188.jpg',
+      'img/Chess0788.jpg'
+      // Add more image paths here
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+      document.body.style.backgroundImage = `url('${images[index]}')`;
+      index = (index + 1) % images.length;
+    }
+
+    // Initial background
+    changeBackground();
+
+    // Change every 5 seconds
+    setInterval(changeBackground, 5000);
+  </script>
+</body>
+</html>
